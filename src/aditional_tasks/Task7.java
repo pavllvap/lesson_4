@@ -10,26 +10,22 @@ public class Task7 {
     }
 
     public static void bubbleSortOfArray(int lengthArray) {
-        int[] array1 = UtilClass.createRandomArray(lengthArray);
-        int[] array2 = new int[array1.length];
+        int[] array = UtilClass.createRandomArray(lengthArray);
         boolean bol = true ;
-        int x = 0;
-
+        int x;
         while (bol) {
             bol = false;
-            for (int i = 0; i < array1.length - 1; i++) {
-                if (array1[i] > array1[i + 1]) {
-                    x = array1[i];
-                    array1[i] = array1[i + 1];
-                    array1[i + 1] = x;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    x = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = x;
                     bol = true;
                 }
             }
         }
-        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array));
     }
-
-
 }
 
 
