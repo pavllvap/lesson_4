@@ -13,7 +13,7 @@ public class Task4 {
     public static void createArrayWithEvenNumbers() {
         Scanner scanner = new Scanner(System.in);
         int[] array = null;
-        int length = 0;
+        int length;
         boolean b = true;
         System.out.println("Enter the length of array, from range 5 < length <= 10 : ");
         while (b) {
@@ -22,8 +22,10 @@ public class Task4 {
                 array = UtilClass.createRandomArray(length);
                 b = false;
             } else {
-                System.out.print("Your length out of range 5 < length <= 10" + "\n" +
-                        "Please repeat enter of length :" + "\n");
+                System.out.print("""
+                        Your length out of range 5 < length <= 10
+                        Please repeat enter of length :
+                        """);
             }
         }
         int count = 0;
@@ -35,9 +37,9 @@ public class Task4 {
         System.out.println("Amount of even numbers : " + count);
         int[] arrayWithEvenNumbers = new int[count];
         int counter = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i]%2 == 0) {
-                arrayWithEvenNumbers[counter] = array[i];
+        for (int j : array) {
+            if (j % 2 == 0) {
+                arrayWithEvenNumbers[counter] = j;
                 counter++;
             }
         }
